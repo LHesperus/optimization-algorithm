@@ -1,11 +1,11 @@
 %0.618
-%err should not be too small, otherwise errors will occur
+%
 function [opt_point opt_value]=GoldenSectionMethod(tstart,tend,err)
         b=tstart+0.618*(tend-tstart);
         fb=test_func(b);
         a=tstart+tend-b;
         fa=test_func(a);
-while(abs(b-a)>err)
+while((b-a)>err)
         if(fa<=fb)
             tend=b;
             b=a;
